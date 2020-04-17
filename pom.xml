@@ -12,8 +12,19 @@
     <version>20.5.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Manorrock Birman - Project</name>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.2.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
     <modules>
         <module>filter</module>
+        <module>webapp</module>
     </modules>
 </project>
-
