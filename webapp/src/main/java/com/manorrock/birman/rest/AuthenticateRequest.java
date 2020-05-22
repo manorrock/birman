@@ -26,9 +26,9 @@
 package com.manorrock.birman.rest;
 
 /**
- * The object used to send in the information needed to authenticate.
+ * The authenticate request.
  * 
  * @author Manfred Riem (mriem@manorrock.com)
  */
-public class AuthenticateObject {
+public class AuthenticateRequest {
 }
