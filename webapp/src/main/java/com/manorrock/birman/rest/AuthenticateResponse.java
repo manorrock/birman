@@ -30,5 +30,5 @@ package com.manorrock.birman.rest;
  * 
  * @author Manfred Riem (mriem@manorrock.com)
  */
-public class AuthenticateResult {
+public class AuthenticateResponse {
 }
