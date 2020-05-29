@@ -49,7 +49,7 @@ public class AuthenticateResource {
     @POST
     @Consumes({APPLICATION_JSON, APPLICATION_XML})
     @Produces({APPLICATION_JSON, APPLICATION_XML})
-    public AuthenticateResult authenticate(AuthenticateRequest authenticate) {
-        return new AuthenticateResult();
+    public AuthenticateResponse authenticate(AuthenticateRequest authenticate) {
+        return new AuthenticateResponse();
     }
 }
