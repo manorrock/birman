@@ -31,4 +31,50 @@ package com.manorrock.birman.rest;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 public class AuthenticateRequest {
+    
+    /**
+     * Stores the password.
+     */
+    private String password;
+    
+    /**
+     * Stores the username.
+     */
+    private String username;
+
+    /**
+     * Get the password.
+     * 
+     * @return the password.
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Get the username.
+     * 
+     * @return the username.
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Set the password.
+     * 
+     * @param password the password.
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * Set the username.
+     * 
+     * @param username the username.
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
