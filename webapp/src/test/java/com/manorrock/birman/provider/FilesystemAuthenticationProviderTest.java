@@ -25,19 +25,24 @@
  */
 package com.manorrock.birman.provider;
 
+import java.io.File;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+
 /**
- * The authentication provider API.
+ * The JUnit tests for the FilesystemAuthenticationProvider class.
  * 
  * @author Manfred Riem (mriem@manorrock.com)
  */
-public interface AuthenticationProvider {
-
+public class FilesystemAuthenticationProviderTest {
+    
     /**
-     * Authenticate.
-     *
-     * @param username the username.
-     * @param password the password.
-     * @return true if authenticated, false otherwise.
+     * Test authenticate method.
      */
-    boolean authenticate(String username, String password);
+    @Test
+    public void testAuthenticate() {
+        File filename = new File("src/test/provider/filesystem/provider.properties");
+        FilesystemAuthenticationProvider provider = new FilesystemAuthenticationProvider(filename);
+        assertTrue(provider.authenticate("username", "password"));
+    }
 }
