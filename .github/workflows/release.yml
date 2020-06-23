@@ -36,3 +36,18 @@ jobs:
         VERSION=${TAG:${#INDEX}}
         docker build -f src/main/docker/Dockerfile.arm -t manorrock/birman:arm-$VERSION .
         docker push manorrock/birman:arm-$VERSION
+    - name: Push Docker manifest
+      run: |
+        cd webapp
+        TAG=${GITHUB_REF}
+        INDEX=${TAG%v*}
+        VERSION=${TAG:${#INDEX}}
+        export DOCKER_CLI_EXPERIMENTAL=enabled
+        docker manifest create manorrock/birman:$VERSION \
+          manorrock/birman:amd64-$VERSION \
+          manorrock/birman:arm-$VERSION
+        docker manifest annotate manorrock/birman:$VERSION \
+          manorrock/birman:amd64-$VERSION --os linux --arch amd64
+        docker manifest annotate manorrock/birman:$VERSION \
+          manorrock/birman:arm-$VERSION --os linux --arch arm
+        docker manifest push manorrock/birman:$VERSION
