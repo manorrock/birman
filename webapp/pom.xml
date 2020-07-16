@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.manorrock.birman</groupId>
-        <version>20.6.0-SNAPSHOT</version>
+        <version>20.7.0</version>
         <artifactId>project</artifactId>
     </parent>
     <artifactId>webapp</artifactId>
