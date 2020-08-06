@@ -25,58 +25,73 @@
  */
 package com.manorrock.birman;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import org.omnifaces.oyena.action.ActionMapping;
-
 /**
- * The controller for the index page.
+ * An authentication token.
  *
  * @author Manfred Riem (mriem@manorrock.com)
  */
-@Named("index")
-@RequestScoped
-public class IndexController implements Serializable {
+public class AuthenticationToken {
 
     /**
-     * Stores the application bean.
+     * Stores the description.
      */
-    @Inject
-    private Application application;
-    
+    private String description;
+
     /**
-     * Stores the authentication tokens.
+     * Stores the value.
      */
-    private final List<AuthenticationToken> authenticationTokens;
-    
+    private String value;
+
     /**
      * Constructor.
      */
-    public IndexController() {
-        authenticationTokens = new ArrayList<>();
-        authenticationTokens.add(new AuthenticationToken("description", "value"));
+    public AuthenticationToken() {
     }
 
     /**
-     * Execute the page.
+     * Constructor.
      *
-     * @return /index.xhtml
+     * @param description the description.
+     * @param value the value.
      */
-    @ActionMapping("/")
-    public String execute() {
-        return "/WEB-INF/ui/index.xhtml";
+    public AuthenticationToken(String description, String value) {
+        this.description = description;
+        this.value = value;
     }
-    
+
     /**
-     * Get the authentication tokens.
-     * 
-     * @return the authentication tokens.
+     * Get the description.
+     *
+     * @return the description.
      */
-    public List<AuthenticationToken> getAuthenticationTokens() {
-        return authenticationTokens;
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Get the value.
+     *
+     * @return the value.
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * Set the description.
+     *
+     * @param description the description.
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * Set the value.
+     *
+     * @param value the value.
+     */
+    public void setValue(String value) {
+        this.value = value;
     }
 }
