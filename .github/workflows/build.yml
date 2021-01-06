@@ -19,12 +19,12 @@ jobs:
     - name: Build amd64 image
       run: |
         cd webapp
-        docker build -f src/main/docker/Dockerfile.amd64 -t manorrock/birman:amd64-snapshot .
+        docker build -f Dockerfile.amd64 -t manorrock/birman:amd64-snapshot .
         docker push manorrock/birman:amd64-snapshot
     - name: Build arm32v6 image
       run: |
         cd webapp
-        docker build -f src/main/docker/Dockerfile.arm32v6 -t manorrock/birman:arm32v6-snapshot .
+        docker build -f Dockerfile.arm32v6 -t manorrock/birman:arm32v6-snapshot .
         docker push manorrock/birman:arm32v6-snapshot
     - name: Push Docker manifest
       run: |
