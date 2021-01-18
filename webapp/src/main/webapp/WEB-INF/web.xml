@@ -19,6 +19,10 @@
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Oyena Action Servlet</servlet-name>
         <url-pattern>/ui/*</url-pattern>
     </servlet-mapping>
@@ -26,7 +30,7 @@
         <session-timeout>30</session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/index.xhtml</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
     <error-page>
         <error-code>404</error-code>
