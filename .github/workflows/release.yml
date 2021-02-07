@@ -34,7 +34,7 @@ jobs:
         TAG=${GITHUB_REF}
         INDEX=${TAG%v*}
         VERSION=${TAG:${#INDEX}}
-        docker build -f Dockerfile.arm32v6 -t manorrock/birman:arm-$VERSION .
+        docker build -f Dockerfile.arm32v6 -t manorrock/birman:arm32v6-$VERSION .
         docker push manorrock/birman:arm32v6-$VERSION
     - name: Push Docker manifest
       run: |
