@@ -1,19 +1,2 @@
-#
-# Use Manorrock Server
-#
-FROM manorrock/server:arm32v6-v20.9.0
-
-#
-# Setup for cross-platform building.
-#
-RUN ["cross-build-start"]
-
-#
-# Copy Manorrock Birman into Tomcat 9.
-#
+FROM manorrock/tomcat:arm32v6-9
 COPY target/birman.war /usr/local/tomcat/webapps/ROOT.war
-
-#
-# End cross platform building.
-#
-RUN ["cross-build-end"]

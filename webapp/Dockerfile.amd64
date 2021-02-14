@@ -1,9 +1,2 @@
-#
-# Use Manorrock Server
-#
-FROM manorrock/server:amd64-v20.9.0
-
-#
-# Copy Manorrock Birman into Tomcat 9.
-#
+FROM manorrock/tomcat:9
 COPY target/birman.war /usr/local/tomcat/webapps/ROOT.war
