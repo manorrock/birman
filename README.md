@@ -8,11 +8,11 @@
 
 And replace VERSION with the version you want to use.
 
-## Testing SNAPSHOT versions
+## Testing our development version
 
-Every night we push a SNAPSHOT version to Docker Hub. If you want to give the
-version under development a test drive use `snapshot` as the version for the
-instructions above.
+Upon every build we push our development version to Docker Hub. If you want to
+give the version under development a test drive use `latest` as the version for
+the instructions above.
 
 ## Important notice
 
